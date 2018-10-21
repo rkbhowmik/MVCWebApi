@@ -1,0 +1,29 @@
+﻿In this assignment Database first approach has been taken. First, a database with three table has been created with necessary properties. 
+Two tables - a. Category and b. Product has (one-to-many) relations. Stored procedure for product table has also been initiated. View-Model class created for each models respectively. 
+Then using Ado.net Entity Model (RestaurantModel.edmx) implemented all the three tables. Three controllers are also created for Category, Product and Schedule.
+Categories- part is implemented by MVC technique with entity framework contains CRUD operation and has its own different views for Index, Edit, Details, Delete and Create.
+
+Second part is Product where ado.net and stored procedure has been used for storing data. 
+Web Api technique is implemented in Products Controller and jQuery/Ajax used to do CRUD operations from the client site which is handled through Web Api. 
+Scripts>custom>product.js contains code for calling jquery/ajax functionalities with different methods.
+
+Third part is for checking Restaurant's open-closing time. Schedule.cshtml handles this checking criterias graphically. This can also be checked using Postmand or Fiddler.
+Example postman example: 
+Postman call :: http://localhost:54389/api/Schedule/CheckSchedule?id=4&time=21
+Scripts>custom>schedule.js contains jquery/ajax calling.
+
+SqlQueries for creating tables and stored procedure is included in Documentation folder.
+
+Reference:
+a. c-sharpcorner.com
+b. stackoverflow
+c. Microsoft Documentation
+d. Udemy
+5. Pluralsight
+6. Youtube
+7. w3schools.com
+8. Bootstrap Theme (https://bootstrapmade.com/delicious-free-restaurant-bootstrap-theme/)
+9. tutorialspoint.com
+
+
+

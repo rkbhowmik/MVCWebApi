@@ -1,0 +1,167 @@
+﻿/* Set padding to keep content from hitting the edges */
+body {
+    font-size: 15px;
+    line-height: 1.52;
+    color: #717f86;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+/* Custom CSS */
+
+
+
+#banner {
+    background: url(../Content/img/banner-bg.jpg) no-repeat center top;
+    background-size: cover;
+    min-height: 630px;
+}
+
+.bg-color {
+    background-color: RGBA(0, 0, 0, 0.61);
+    min-height: 630px;
+}
+#banner h2 {
+    font-family: 'Satisfy', sans-serif;
+    font-size: 45px;
+    color: #FFB03B;
+}
+
+#banner p {
+    font-family: 'PT Sans', sans-serif;
+    color: #fcfcfc;
+    font-size: 34px;
+}
+.section-padding {
+    padding: 60px 0px;
+}
+
+.logo-name {
+    font-family: 'Satisfy', sans-serif;
+    font-size: 65px;
+    margin-top: 140px;
+    color: #FFB03B;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s
+    }
+
+        .sidenav a:hover, .offcanvas a:focus {
+            color: #f1f1f1;
+        }
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px !important;
+    margin-left: 50px;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+.menu-icon {
+    color: #fff;
+    font-size: 30px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+@media (min-width: 768px) and (max-width: 980px) {
+    .content-holder h2 {
+        font-size: 23px;
+    }
+
+    .details-text p {
+        line-height: 16.6px;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 767px) {
+    .details-text {
+        border: 0px;
+        border-bottom: 2px solid #A87F41;
+    }
+}
+
+@media (min-width: 20px) and (max-width: 450px) {
+    .menu-restaurant {
+        width: 100%;
+    }
+
+    .details-text {
+        border: 0px;
+        border-bottom: 2px solid #A87F41;
+    }
+
+    .header-h {
+        font-size: 35px;
+    }
+
+    .header-p, body {
+        font-size: 14px;
+    }
+
+    .about-info, .mr-15 {
+        margin-bottom: 15px;
+    }
+
+    #banner h2 {
+        font-size: 25px;
+    }
+
+    #banner p {
+        font-size: 25px;
+    }
+
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}

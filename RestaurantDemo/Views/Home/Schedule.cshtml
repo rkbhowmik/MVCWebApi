@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewBag.Title = "Schedule";
+   <script src = "/Scripts/custom/schedule.js" ></script>
+    <style type="text/css">
+        #ddlDayOuter, #ddlDayCheckOuter #ddlTimeOuter {
+            width: 80% !important;
+        }
+    </style>
+
+}
+
+<h2>Schedule</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="scheduleDay">Day:</label>
+            <div id="ddlDayOuter">
+                <select class="form-control" id="ddlDay" onchange="findSchedule()">
+                    <option value="-1">Select a Day</option>
+                    <option value="1">Måndag</option>
+                    <option value="2">Tisdag</option>
+                    <option value="3">Onsdag</option>
+                    <option value="4">Torsdag</option>
+                    <option value="5">Fredag</option>
+                    <option value="6">Lördag</option>
+                    <option value="7">Söndag</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <label for="openingHour">Opening Hour:</label>
+            <input type="text" class="form-control" id="txtOpeningHour" readonly>
+        </div>
+        <div class="form-group">
+            <label for="closingHour">Closing Hour:</label>
+            <input type="text" class="form-control" id="txtClosingHour" readonly>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group">
+            <label for="scheduleDay">Day:</label>
+            <div id="ddlDayCheckOuter">
+                <select class="form-control" id="ddlDayCheck">
+                    <option value="-1">Select a Day</option>
+                    <option value="1">Måndag</option>
+                    <option value="2">Tisdag</option>
+                    <option value="3">Onsdag</option>
+                    <option value="4">Torsdag</option>
+                    <option value="5">Fredag</option>
+                    <option value="6">Lördag</option>
+                    <option value="7">Söndag</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="scheduleTime">Time:</label>
+            <div id="ddlTimeOuter">
+                <select class="form-control" id="ddlTime">
+                    <option value="-1">Select a Time</option>
+                    <option value="1">01:00</option>
+                    <option value="2">02:00</option>
+                    <option value="3">03:00</option>
+                    <option value="4">04:00</option>
+                    <option value="5">05:00</option>
+                    <option value="6">06:00</option>
+                    <option value="7">07:00</option>
+                    <option value="8">08:00</option>
+                    <option value="9">09:00</option>
+                    <option value="10">10:00</option>
+                    <option value="11">11:00</option>
+                    <option value="12">12:00</option>
+                    <option value="13">13:00</option>
+                    <option value="14">14:00</option>
+                    <option value="15">15:00</option>
+                    <option value="16">16:00</option>
+                    <option value="17">17:00</option>
+                    <option value="18">18:00</option>
+                    <option value="19">19:00</option>
+                    <option value="20">20:00</option>
+                    <option value="21">21:00</option>
+                    <option value="22">22:00</option>
+                    <option value="23">23:00</option>
+                    <option value="24">00:00</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-info" id="btnCheck" onclick="checkSchedule()">Check</button>
+        </div>
+        <div class="form-group">
+            <input type="text" style="width:120px!important" class="form-control" id="txtIsOpen" readonly>
+        </div>
+    </div>
+</div>
+<div>
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">
+        <span class="glyphicon glyphicon-menu-left">
+            <strong>Hem</strong>
+        </span>
+    </a>
+</div>

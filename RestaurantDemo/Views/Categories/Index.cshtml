@@ -1,0 +1,55 @@
+﻿@model IEnumerable<RestaurantDemo.Models.Category>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<div>
+    <table class="table table-bordered table-condensed table-striped" >
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>Actions</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoryName)
+                </td>
+                <td>
+                    <div>
+                        <span style="padding-right: 10px">
+                            @Html.ActionLink(" ", "Edit", null, new { id = item.CategoryId }, htmlAttributes: new { @class = "glyphicon glyphicon-pencil "
+                           })
+                        </span>
+                        <span style="padding-right: 10px">
+                            @Html.ActionLink(" ", "Details", new { id = item.CategoryId }, htmlAttributes: new { @class = "glyphicon glyphicon-th-list " })
+                        </span>
+                        <span>
+                            @Html.ActionLink(" ", "Delete", new { id = item.CategoryId }, htmlAttributes: new { @class = "glyphicon glyphicon-remove" })
+                        </span>
+                    </div>
+
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+
+<div>
+    <a href="@Url.Action("Index", "Home" )" class="btn btn-primary">
+        <span class="glyphicon glyphicon-menu-left">
+            <strong>Hem</strong>
+        </span>
+    </a>
+</div>

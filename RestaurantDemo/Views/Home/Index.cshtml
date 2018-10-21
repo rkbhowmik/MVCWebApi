@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container" style="border: 3px double rgb(238,238,238); padding: 10px;">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="https://picsum.photos/300/200" alt="...">
+                <div class="caption">
+                    <h3>Category</h3>
+                    <p>To create, update or delete new category please click the following link.</p>
+                    <p>
+                        @Html.ActionLink("Categories", "Index", "Categories", null, new { @class = "btn btn-primary" })
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="https://picsum.photos/300/200?image=995" alt="...">
+                <div class="caption">
+                    <h3>Product</h3>
+                    <p>To create, update or delete new category please click the following link.</p>
+                    <p>@Html.ActionLink("Product", "Product", "Home", null, new { @class = "btn btn-primary" })</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="https://picsum.photos/300/200?image=504" alt="...">
+                <div class="caption">
+                    <h3>Schedule</h3>
+                    <p>To create, update or delete new category please click the following link.</p>
+                    <p>@Html.ActionLink("Schedule", "Schedule", "Home", null, new { @class = "btn btn-primary" })</p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            @
+        </div>
+    </div>
+</div> 
