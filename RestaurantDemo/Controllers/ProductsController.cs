@@ -1,14 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
 using System.Data;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using System.Data.SqlClient;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using RestaurantDemo.Models;
@@ -44,11 +39,11 @@ namespace RestaurantDemo.Controllers
             }
         }
 
+        // Returns categories list
         [Route("api/Products/GetCategories")]
         public List<CategoryVM> GetCategories()
         {
-            //var list = (from x in db.Categories select x).ToList();
-            var list = db.Categories.Select(a => new CategoryVM() { CategoryId = a.CategoryId, CategoryName = a.CategoryName }).ToList();
+            var list = db.Categories.Select(a => new CategoryVM(){CategoryId = a.CategoryId, CategoryName = a.CategoryName }).ToList();
             return list;
         }
 
@@ -71,7 +66,6 @@ namespace RestaurantDemo.Controllers
             {
                 return NotFound();
             }
-
             return Ok(list);
         }
 
@@ -120,10 +114,8 @@ namespace RestaurantDemo.Controllers
             {
                 return BadRequest(ModelState);
             }
-
             db.Products.Add(product);
             db.SaveChanges();
-
             return CreatedAtRoute("DefaultApi", new { id = product.ProductId }, product);
         }
 
@@ -139,7 +131,6 @@ namespace RestaurantDemo.Controllers
 
             db.Products.Remove(product);
             db.SaveChanges();
-
             return Ok(product);
         }
 
