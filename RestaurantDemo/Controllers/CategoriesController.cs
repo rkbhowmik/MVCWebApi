@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using RestaurantDemo.Models;
 
@@ -15,7 +12,7 @@ namespace RestaurantDemo.Controllers
         private RestaurantEntities db = new RestaurantEntities();
 
         // GET: Categories
-        public ActionResult Index()
+        public  ActionResult Index()
         {
             return View(db.Categories.ToList());
         }
@@ -34,6 +31,20 @@ namespace RestaurantDemo.Controllers
             }
             return View(category);
         }
+        // GET: Categories/Edit/5
+        public async Task<ActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return HttpNotFound();
+            }
+            Category category = await db.Categories.FindAsync(id);
+            if (category == null)
+            {
+                return HttpNotFound();
+            }
+            return View(category);
+        }
 
         // GET: Categories/Create
         public ActionResult Create()
@@ -46,57 +57,42 @@ namespace RestaurantDemo.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CategoryId,CategoryName")] Category category)
+        public async Task<ActionResult> Create([Bind(Include = "CategoryId,CategoryName")] Category category)
         {
             if (ModelState.IsValid)
             {
                 db.Categories.Add(category);
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
-
             return View(category);
         }
 
-        // GET: Categories/Edit/5
-        public ActionResult Edit(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Category category = db.Categories.Find(id);
-            if (category == null)
-            {
-                return HttpNotFound();
-            }
-            return View(category);
-        }
-
+       
         // POST: Categories/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CategoryId,CategoryName")] Category category)
+        public async Task<ActionResult> Edit([Bind(Include = "CategoryId,CategoryName")] Category category)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(category).State = EntityState.Modified;
-                db.SaveChanges();
+                await db.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
             return View(category);
         }
 
         // GET: Categories/Delete/5
-        public ActionResult Delete(int? id)
+        public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return HttpNotFound();
             }
-            Category category = db.Categories.Find(id);
+            Category category = await db.Categories.FindAsync(id);
             if (category == null)
             {
                 return HttpNotFound();
@@ -107,9 +103,9 @@ namespace RestaurantDemo.Controllers
         // POST: Categories/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Category category = db.Categories.Find(id);
+            Category category = await db.Categories.FindAsync(id);
             db.Categories.Remove(category);
             db.SaveChanges();
             return RedirectToAction("Index");
