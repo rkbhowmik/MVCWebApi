@@ -78,6 +78,9 @@ namespace RestaurantDemo.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Attaching an existing entity but modified entity to the context
+                // https://docs.microsoft.com/en-us/ef/ef6/saving/change-tracking/entity-state
+
                 db.Entry(category).State = EntityState.Modified;
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
