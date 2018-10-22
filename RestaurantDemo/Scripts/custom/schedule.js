@@ -35,11 +35,11 @@ function checkSchedule() {
         success: function (data) {
             var result = data;
             $('#txtIsOpen').val('');
-            var isOpen = "No";
+            var isOpen = "Close";
             if (result == null) {               
                 $('#txtIsOpen').val(isOpen);
             } else {
-                isOpen = "Yes";
+                isOpen = "Open";
                 $('#txtIsOpen').val(isOpen);
             }
         },
