@@ -20,6 +20,7 @@ namespace RestaurantDemo.Controllers
             
             var list = db.Schedules.Where(x => x.Id == id).Select(a => new ScheduleVM()
             {
+                Id = a.Id,
                 Day = a.Day,
                 OpeningTime = a.OpeningTime,
                 ClosingTime = a.ClosingTime
