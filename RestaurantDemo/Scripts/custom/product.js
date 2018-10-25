@@ -140,7 +140,7 @@ function LoadProductInfo() {
 
 function BindProductInfo(list) {
 
-    table1 = "<table class='table' id='tblProduct'>" +
+    table1 = "<table class='table table-striped' id='tblProduct'>" +
         "<thead>" +
         "<tr>" +
         "<th>ID</th>" +
