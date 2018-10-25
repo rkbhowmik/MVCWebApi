@@ -143,14 +143,15 @@ function BindProductInfo(list) {
     table1 = "<table class='table table-striped' id='tblProduct'>" +
         "<thead>" +
         "<tr>" +
-        "<th>ID</th>" +
+        "<th>Id</th>" +
         "<th>Category</th>" +
         "<th>Name</th>" +
         "<th>Price</th>" +
         "<th>Description</th>" +
         "<th>Option</th>" +
         "</tr>" +
-        "</thead>";
+        "</thead>" +
+        "</table>";
 
     $('#productInfo').html(table1)
 
