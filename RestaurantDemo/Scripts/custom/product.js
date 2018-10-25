@@ -140,7 +140,7 @@ function LoadProductInfo() {
 
 function BindProductInfo(list) {
 
-    table1 = "<table class='table table-striped' id='tblProduct'>" +
+    table1 = "<table class='table' id='tblProduct'>" +
         "<thead>" +
         "<tr>" +
         "<th>Id</th>" +
@@ -153,7 +153,7 @@ function BindProductInfo(list) {
         "</thead>" +
         "</table>";
 
-    $('#productInfo').html(table1)
+    $('#productInfo').html(table1);
 
     for (var i = 0; i < list.length; i++) {
         $("#tblProduct").append('<tr>' +
@@ -163,7 +163,7 @@ function BindProductInfo(list) {
             '<td>' + list[i].ProductName + '</td>' +
             '<td>' + list[i].ProductPrice + '</td>' +
             '<td>' + list[i].ProductDescription + '</td>' +
-            '<td>' + '<button type="button" class="btn btn-success" onclick="EditProductInfo(' + list[i].ProductId + ')" style="margin: 10px;">Edit</button>&nbsp;' +
+            '<td>' + '<button type="button" class="btn btn-success" onclick="EditProductInfo(' + list[i].ProductId + ')" style="margin: 5px;">Edit</button>&nbsp;' +
             '<button type = "button" class= "btn btn-danger" onclick = "DeleteProductInfo(' + list[i].ProductId + ')"> Delete</button>' +
             '</td>' +
             '</tr>');
