@@ -162,7 +162,7 @@ function BindProductInfo(list) {
             '<td>' + list[i].ProductName + '</td>' +
             '<td>' + list[i].ProductPrice + '</td>' +
             '<td>' + list[i].ProductDescription + '</td>' +
-            '<td>' + '<button type="button" class="btn btn-success" onclick="EditProductInfo(' + list[i].ProductId + ')">Edit</button>&nbsp;' +
+            '<td>' + '<button type="button" class="btn btn-success" onclick="EditProductInfo(' + list[i].ProductId + ')" style="margin: 10px;">Edit</button>&nbsp;' +
             '<button type = "button" class= "btn btn-danger" onclick = "DeleteProductInfo(' + list[i].ProductId + ')"> Delete</button>' +
             '</td>' +
             '</tr>');
