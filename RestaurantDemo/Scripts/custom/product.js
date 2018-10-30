@@ -232,11 +232,12 @@ function DeleteProductInfo(id) {
 function Validate() {
 
     if ($('#txtProductName').val() === '') {
-        alert("Name is required.", "Incomplete");
+        $("#displayAlert").html('<div class="alert alert-danger" role="alert">Product Name is required</div>');
+        //alert("Name is required.", "Incomplete");
         return false;
     }
     if ($('#txtProductPrice').val() === '') {
-        alert("Price is required.", "Incomplete");
+        $("#displayAlert").html('<div class="alert alert-danger" role="alert">Price field is missing</div>');
         return false;
     }
 
